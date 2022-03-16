@@ -1,0 +1,74 @@
+<!-- Buatlah sebuah halaman HTML yang responsive terhadap 3 jenis device:
+Mobile (min: 640px), Tablet (min: 768px), dan Desktop (min: 1024px) 
+a. Ukuran mobile: background color -> merah + tulisan -> Ini device mobile
+b. Ukuran tablet: background color -> biru + tulisan -> Ini device tablet
+c. Ukuran desktop: background color -> hijau + tulisan -> Ini device desktop -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        background-color: lightgreen;
+    }
+
+    .desktop{
+        display: block;
+    }
+    .tablet{
+        display: none;
+    }
+    .mobile{
+        display: none;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+        body{
+            background-color: blue;
+        }
+        .desktop{
+            display: none;
+        }
+
+        .tablet{
+            display: block;
+        }
+
+        .mobile{
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 640px) and (max-width: 767px) {
+        body{
+            background-color: red;
+        }
+        .desktop{
+            display: none;
+        }
+
+        .tablet{
+            display: none;
+        }
+
+        .mobile{
+            display: block;
+        }
+    }
+
+</style>
+
+<body>
+    
+    <p class="mobile"> Ini device mobile </p>
+    <p class="tablet"> Ini device tablet </p>
+    <p class="desktop"> Ini device desktop </p>
+
+</body>
+</html>
