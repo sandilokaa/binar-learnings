@@ -12,7 +12,8 @@ body{
 /* Navbar */
 
 .navbar{
-    height: 90px;
+    height: 100%;
+    padding: 20px;
 }
 
 .navbar-brand{
@@ -75,7 +76,10 @@ body{
 
     .navbar{
         background-color: white;
-        z-index: 10;
+    }
+
+    .nav-item{
+        padding: 5px 0px;
     }
 
     .row__main__section{
