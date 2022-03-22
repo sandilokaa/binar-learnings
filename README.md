@@ -25,3 +25,9 @@ Berikut gambaran ketika layar berukuran desktop (>= 1200px)
 Berikut gambaran ketika layar berukuran mobile (>= 576px )
 
 ![diagram](./img/bcr_mobile.png)
+
+## Tampilan Mobile (SideBar)
+
+Berikut gambaran ketika layar berukuran mobile (>= 576px )
+
+![diagram](./img/bcr_sidebar.png)
