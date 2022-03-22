@@ -1,0 +1,593 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: 'helvetica', sans-serif;
+	overflow-x: hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+	height: 100%;
+	padding: 20px;
+	background: #F1F3FF;
+}
+
+.navbar-brand{
+	height: 50px;
+	width: 150px;
+	background: #0D28A6;
+}
+
+.nav-item .register{
+	padding: 8px 15px;
+	background: #5CB85F;
+	cursor: pointer;
+}
+
+.nav-item .register:hover{
+	background: #3D7B3F;
+}
+
+.nav-item{
+	padding: 5px 10px;
+	font-weight: 600;
+}
+.offcanvas{
+	display: none;
+}
+
+/* END OF NAVBAR */
+
+/* MAIN SECTION */
+
+.main__section{
+	background: #F1F3FF;
+	width: 100%;
+}
+
+.col__main__section h2{
+	margin-top: 27%;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 54px;
+}
+
+.col__main__section p{
+	font-size: 14px;
+	line-height: 20px;
+}
+
+a.btn{
+	font-size: 14px;
+	padding: 10px 15px;
+	background: #5CB85F;
+	border: none;
+	color: #fff;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+a.btn:hover{
+	color: #fff;
+	background: #000;
+}
+
+.col__image img{
+	height: 384px;
+	width: 664px;
+	margin-top: 10%;
+}
+
+.col__image{
+	margin-left: 0;
+}
+
+/* END OF MAIN SECTION */
+
+
+/* OUR SERVICE SECTION */
+
+.our__service{
+	margin-top: 3%;
+	width: 100%;
+}
+
+.col__image__service img{
+	height: 408px;
+	width: 439px;
+	margin-top: 15%;
+	margin-left: 12%;
+}
+
+.col__service{
+	margin-left: -5%;
+}
+
+.col__service h3{
+	margin-top: 21%;
+	margin-left: 80px;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.col__service p{
+	font-size: 14px;
+	margin-left: 80px;
+	margin-top: 15px;
+}
+
+.col__service .bi-check{
+	height: 40px;
+	width: 40px;
+	padding: 1px 2px;
+	border-radius: 50%;
+	background-color: #CFD4ED;
+	font-size: 20px;
+}
+
+/* END OF OUR SERVICE SECTION */
+
+/* Why Us Section */
+
+.why__us{
+	margin-top: 6%;
+	width: 100%;
+}
+
+.h1__wu{
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.p__wu{
+	font-size: 14px;
+}
+
+.card-body h5{
+	font-size: 16px;
+	font-weight: 700;
+	margin-top: 15px;
+}
+
+.card-body p{
+	margin-top: 15px;
+	font-size: 14px;
+}
+
+.card-body .bi-hand-thumbs-up{
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #F9CC00;
+}
+
+.card-body .bi-tag{
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #FA2C5A;
+}
+
+.card-body .bi-clock{
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #0D28A6;
+} 
+
+.card-body .bi-award{
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #73CA5C;
+}
+/* End of Why Us Section */
+
+/* Testimonial Section */
+
+.testimonial{
+	margin-top: 5%;
+	width: 100%;
+}
+
+.testimonial .h1__testimonial{
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 36px;
+	text-align: center;
+}
+
+.testimonial .p__testimonial{
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+}
+
+.carousel{
+	margin-top: 2%;
+}
+
+.carousel-indicators{
+	left: 0;
+	top: auto;
+	bottom: -70px;
+}
+
+.carousel-indicators .bi-chevron-left,
+.carousel-indicators .bi-chevron-right
+{
+	height: 30px;
+	width: 30px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #fff;
+	margin-left: 10px;
+	border: 1px solid #C4C4C4;
+	font-size: 15px;
+	text-align: center;
+}
+
+.carousel-indicators .active{
+	color: white;
+	background-color: #5CB85F;
+	border: none;
+	text-align: center;
+}
+
+.single-box{
+	padding: 50px 30px 40px;
+	border-radius: 8px;
+	background-color: #F1F3FF;
+	height: 240px;
+}
+
+.testimonial .img-area{
+	position: absolute;
+	margin: 0;
+	width: 20%;
+}
+
+.img-area img{
+	width: 70px;
+	height: 70px;
+	margin-top: 30px;
+}
+
+.text-img .bi-star-fill{
+	color: #F9CC00;
+}
+
+.text-img .bi-star-half{
+	color: #F9CC00;
+}
+
+.text-img p{
+	font-size: 14px;
+	line-height: 20px;
+	margin-top: 5px;
+}
+
+.text-img h2{
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+}
+
+.testimonial .text-img{
+	float: left;
+	padding-left: 30%;
+}
+
+/* End of Testimonial Section */
+
+
+/* Sewa Mobil Section */
+.sewa__mobil{
+	margin-top: 5%;
+	width: 100%;
+}
+
+.sewa__mobil .jumbotron{
+	text-align: center;
+	background-color: #0D28A6;
+	border-radius: 13px;
+	
+	padding: 50px 20px;
+}
+
+.jumbotron h1{
+	margin-top: 0;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 54px;
+	color: #fff;
+}
+
+.h1__sewa{
+	margin-top: 5%;
+}
+
+.jumbotron p{
+	margin-top: 20px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #fff;
+}
+
+.jumbotron .btn-success{
+	margin-top: 25px;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 700;
+}
+/* End of Sewa Mobil Section */
+
+/* FAQ Section */
+
+.faq__section{
+	margin-top: 8%;
+	width: 100%;
+}
+
+.col__faq h1{
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 36px;
+}
+
+.col__faq p{
+	font-size: 14px;
+	line-height: 20px;
+}
+
+
+.accordion-header button{
+	color: black;
+	text-decoration: none;
+}
+
+.accordion-header button:hover{
+	color: black;
+	text-decoration: none;
+}
+
+
+/* End of FAQ Section */
+
+/* Footer */
+
+.footer{
+	margin-top: 10%;
+	margin-bottom: 5%;	
+	width: 100%;
+}
+
+.col__alamat p{
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.col__nav2 a{
+	font-size: 14px;
+	line-height: 20px;
+	color: black;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.col__connect p{
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.col__connect i{
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #0D28A6;
+	color: white;
+}
+
+.col__cr p{
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.col__cr .kosong{
+	height: 34px;
+	width: 100px;
+	background-color: #0D28A6;
+}
+
+/* End of Footer */
+
+/* Responsive Design */
+
+@media screen and (min-width: 360px) and (max-width: 575px){
+	
+	/* Navbar */
+
+	.navbar-brand{
+		margin-left: -15px;
+	}
+
+	.offcanvas{
+		display: block;
+		width: 70%;
+	}
+
+	.nav-item{
+		margin-top: -10%;
+		padding: 15px 0;
+		font-weight: 600;
+	}
+
+	/* End of Navbar */
+
+	/* Main Section */
+	
+	.main__section{
+		width: 100%;
+		overflow-x: hidden;
+	}
+	.col__main__section h2{
+		margin-top: 6%;
+	}
+	.col__image img{
+		height: 199px;
+		width: 352px;
+		margin-top: 10%;
+	}
+	
+	.col__image{
+		margin-left: 0;
+	}
+
+	/* End of Main Section */
+
+	/* Our Service */
+
+	.our__service{
+		margin-top: 3%;
+		width: 100%;
+	}
+	
+	.col__image__service img{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 15%;
+		height: 230px;
+		width: 260px;
+		
+	}
+	
+	.col__service{
+		margin-left: 0;
+	}
+	
+	.col__service h3{
+		margin-top: 12%;
+		margin-left: 0;
+		font-size: 24px;
+		font-weight: 700;
+	}
+	
+	.col__service p{
+		font-size: 14px;
+		margin-left: 0;
+		margin-top: 15px;
+	}
+
+	/* End of Our Service */
+
+	/* Why Us */
+
+	.why__us{
+		margin-top: 15%;
+	}
+
+	.h1__wu{
+		text-align: center;
+		font-size: 24px;
+		font-weight: 700;
+	}
+	
+	.p__wu{
+		text-align: center;
+		font-size: 14px;
+	}
+
+	.why__us .card{
+		margin-top: 15px;
+	}
+
+	/* End of Why Us */
+
+	/* Testimonials */
+
+	.testimonial{
+		margin-top: 20%;
+	}
+
+	.single-box{
+		padding: 20px 10px 0px 20px;
+		border-radius: 8px;
+		background-color: #F1F3FF;
+		height: 350px;
+		width: 100%;
+	}
+
+	.testimonial .text-img{
+		padding-left: 0;
+		margin-top: 10%;
+	}
+
+	.text-img p{
+		margin-top: 7%;
+	}
+
+	.text-img .icon{
+		text-align: center;
+	}
+
+	.carousel{
+		margin: 5% auto;
+		width: 300px;
+	}
+
+	.testimonial .img-area{
+		width: 100%;
+		position: relative;
+	}
+	
+	.img-area img{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 70px;
+		height: 70px;
+	}
+
+	/* End of Testimonial */
+
+	/* Jumbotron Rent Car */
+
+	.sewa__mobil{
+		margin-top: 10%;
+	}
+
+
+	/* End of Jumbotron Rent Car */
+
+
+	/* FAQ Section */
+
+	.faq__section{
+		margin-top: 20%;
+	}
+
+	.col__faq p{
+		margin-top: 5%;
+		margin-bottom: 5%;
+	}
+
+	/* End of FAQ Section*/
+
+	/* Footer */
+	
+	.col__cr{
+		margin-top: 20px;
+	}
+
+	/* End of Footer */
+}
