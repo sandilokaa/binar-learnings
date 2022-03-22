@@ -4,15 +4,9 @@ Tempat untuk mengumpulkan latihan yang diberikan oleh mentor. Menggunakan Bootst
 
 Untuk lebih lengkapnya, baca dokumentasi link dibawah ini :
 
+ - Bootstrap 5 `(https://getbootstrap.com/docs/5.1/getting-started/introduction/)`
 
-### Bootstrap 5
-
-https://getbootstrap.com/docs/5.1/getting-started/introduction/
-
-
-### Owl Carousel
-
-https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html
+ - Owl Carousel `(https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html)`
 
 ## Responsive Design
 
