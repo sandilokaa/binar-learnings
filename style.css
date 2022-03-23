@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900 & display: swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+
+.navbar{
+    height: 100%;
+}
+
+.navbar-brand img{
+    height: 90px;
+    width: 160px;
+}
+
+.nav-item{
+    padding: 8px 12px;
+    font-weight: 600;
+}
+
+.nav-item .sign__in{
+    height: 40px;
+    width: 85px;
+    padding: 8px;
+    background-color: #5B7DB1;
+    border-radius: 7px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s all ease;
+}
+
+.nav-item .sign__in:hover{
+    background-color: #61A4BC;
+}
+
+/* End of Navbar */
+
+/* Main Section */
+
+.col__image{
+    margin-top: 2%;
+}
+
+.col__caption{
+    margin-top: 13%;
+}
+
+.col__caption h1{
+    font-weight: 800;
+    margin-bottom: 3%;
+}
+
+.col__image img{
+    height: auto;
+    width: 600px;
+}
+
+.col__caption a{
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.explore__btn{
+    padding: 12px;
+    background-color: #5B7DB1;
+    border-radius: 7px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s all ease;
+}
+
+.explore__btn:hover{
+    background-color: #61A4BC;
+}
+
+/* End of Main Section */
+
+/* Explore Our Products Section */
+
+.our__product{
+    margin-top: 7%;
+}
+
+.our__product h3{
+    text-align: center;
+    font-weight: 700;
+}
+
+.our__product .card{
+    border: none;
+    margin-top: 10%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.our__product .card:hover{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2) ;
+}
+
+.icon__op img{
+    display: block;
+    margin-top: 8%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-body h5{
+    font-weight: 600;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.card-body p{
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.card-body a{
+    text-decoration: none;
+    font-weight: 700;
+    color: #5B7DB1;
+}
+
+.learn-more{
+    margin-top: 10%;
+    text-align: center;
+}
+
+/* End of Explore Our Products Section */
+
+/* Related Product */
+
+.related__product{
+    margin-top: 10%;
+}
+
+.related__product .card{
+    margin-top: 15%;
+    border: none;
+}
+
+.related__product .card:hover{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.related__product .card img{
+    border-radius: 2%;
+    height: 220px;
+    width: 100%;
+}
+
+.related__product h3{
+    text-align: center;
+    font-weight: 700;
+}
+
+.related__product .card p{
+    text-align: center;
+    font-weight: 700;
+    color: #FF6B6B;
+}
+
+.related__product a{
+    font-weight: 600;
+    border: 2px solid #5B7DB1;
+    border-radius: 10px;
+    padding: 9px 120px;
+    transition: 0.3s all ease;
+}
+
+.related__product a:hover{
+    background-color: #5B7DB1;
+    color: white;
+}
+
+.related__product .card .buy__now{
+    margin-top: 10%;
+    text-align: center;
+}
+
+/* End of Related Product
