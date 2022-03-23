@@ -42,6 +42,7 @@ body{
 
 /* End of Navbar */
 
+
 /* Main Section */
 
 .col__image{
@@ -58,6 +59,7 @@ body{
 }
 
 .col__caption p{
+    font-size: 14px;
     margin-bottom: 5%;
 }
 
@@ -85,6 +87,7 @@ body{
 }
 
 /* End of Main Section */
+
 
 /* Explore Our Products Section */
 
@@ -141,11 +144,11 @@ body{
 
 /* End of Explore Our Products Section */
 
+
 /* Related Product */
 
 .related__product{
     margin-top: 10%;
-    height: 1500px;
 }
 
 .related__product .card{
@@ -212,4 +215,104 @@ body{
     border: 2px solid #61A4BC;
 }
 
-/* End of Related Product
+/* End of Related Product */
+
+
+/* Get Offers Section */
+
+.get__offers{
+    margin-top: 10%;
+}
+
+.image__go img{
+    width: 545px;
+    height: 454px;
+    box-shadow: 5px 10px 15px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.caption__go h1{
+    margin-top: 25%;
+    margin-bottom: 3%;
+    font-weight: 800;
+}
+
+.caption__go p{
+    margin-bottom: 5%;
+    font-size: 14px;
+}
+
+.caption__go a{
+    padding: 9px 20px;
+    background-color: #5B7DB1;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* End of Get Offers Section */
+
+
+/* Reviews Monitoring Section */
+
+.reviews__monitoring{
+    margin-top: 10%;
+    height: 1000px;
+}
+
+.reviews__monitoring .card{
+    border: none;
+    box-shadow: 5px 10px 15px 0  rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.image__rm img{
+    height: 200px;
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.reviews__monitoring h5{
+    margin-top: 0;
+}
+
+.reviews__monitoring p{
+    margin-top: 3%;
+}
+
+.reviews__monitoring a{
+    padding: 10px 30px;
+    color: #5B7DB1;
+    border: 2px solid #5B7DB1;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s all ease;
+}
+
+.reviews__monitoring a:hover{
+    background-color: #5B7DB1;
+    color: white;
+}
+
+.other__sites{
+    text-align: center;
+    margin: 6% 0;
+}
+
+.icon__rm{
+    margin-top: 5%;
+    margin-bottom: 8%;
+    text-align: center;
+}
+
+.icon__rm i{
+    color: #FF6B6B;
+    font-size: 20px;
+}
+
+/* End of Reviews Monitoring Section */
