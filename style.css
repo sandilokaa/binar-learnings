@@ -57,6 +57,10 @@ body{
     margin-bottom: 3%;
 }
 
+.col__caption p{
+    margin-bottom: 5%;
+}
+
 .col__image img{
     height: auto;
     width: 600px;
@@ -141,6 +145,7 @@ body{
 
 .related__product{
     margin-top: 10%;
+    height: 1500px;
 }
 
 .related__product .card{
@@ -183,8 +188,28 @@ body{
 }
 
 .related__product .card .buy__now{
-    margin-top: 10%;
+    margin: 10% 0;
     text-align: center;
+}
+
+.related__product .view__product{
+    margin-top: 30%;
+    text-align: center;
+}
+
+.related__product .view__product a{
+    padding: 9px 20px;
+    background-color: #5B7DB1;
+    color: white;
+    font-weight: 600;
+    border: 2px solid #5B7DB1;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.related__product .view__product a:hover{
+    background-color: #61A4BC;
+    border: 2px solid #61A4BC;
 }
 
 /* End of Related Product
