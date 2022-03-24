@@ -15,11 +15,11 @@ Responsive web design atau desain web responsif adalah sebuah teknik atau metode
 
 Berikut gambaran ketika layar berukuran desktop (>= 1200px)
 
-![diagram](./img/bcr_desktop.png)
+![diagram](./assets/Whoops_Desktop_Design.png)
 
 
 ## Tampilan Mobile
 
 Berikut gambaran ketika layar berukuran mobile (>= 576px )
 
-![diagram](./img/bcr_mobile.png)
+![diagram](./assets/Whoops_Mobile_Design.png)
