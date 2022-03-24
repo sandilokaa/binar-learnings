@@ -74,7 +74,9 @@ body{
 }
 
 .explore__btn{
-    padding: 12px;
+    height: 50px;
+    width: 200px;
+    padding: 12px 15px;
     background-color: #5B7DB1;
     border-radius: 7px;
     text-align: center;
@@ -177,11 +179,13 @@ body{
     color: #FF6B6B;
 }
 
-.related__product a{
+.related__product .btn__buy__now{
     font-weight: 600;
     border: 2px solid #5B7DB1;
     border-radius: 10px;
-    padding: 9px 120px;
+    height: 50px;
+    width: 100%;
+    padding: 12px 15px;
     transition: 0.3s all ease;
 }
 
@@ -201,7 +205,9 @@ body{
 }
 
 .related__product .view__product a{
-    padding: 9px 20px;
+    height: 50px;
+    width: 200px;
+    padding: 12px 15px;
     background-color: #5B7DB1;
     color: white;
     font-weight: 600;
@@ -225,14 +231,14 @@ body{
 }
 
 .image__go img{
-    width: 545px;
-    height: 454px;
+    width: 490px;
+    height: 375px;
     box-shadow: 5px 10px 15px 0 rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
 
 .caption__go h1{
-    margin-top: 25%;
+    margin-top: 20%;
     margin-bottom: 3%;
     font-weight: 800;
 }
@@ -250,6 +256,11 @@ body{
     text-decoration: none;
     font-weight: 600;
     cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+.caption__go a:hover{
+    background-color: #61A4BC;
 }
 
 /* End of Get Offers Section */
@@ -259,13 +270,13 @@ body{
 
 .reviews__monitoring{
     margin-top: 10%;
-    height: 1000px;
 }
 
 .reviews__monitoring .card{
     border: none;
     box-shadow: 5px 10px 15px 0  rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    width: 90%;
 }
 
 .image__rm img{
@@ -315,4 +326,262 @@ body{
     font-size: 20px;
 }
 
+.col__caption__mr{
+    margin-top: 13%;
+}
+
+.col__caption__mr h1{
+    font-weight: 800;
+    margin-bottom: 3%;
+}
+
+.col__caption__mr p{
+    margin-top: 3%;
+    font-size: 14px;
+}
 /* End of Reviews Monitoring Section */
+
+/* Submit Form Section */
+
+.submit__form{
+    margin-top: 10%;
+}
+
+.col__caption__sf{
+    margin-top: 9%;
+}
+
+.col__caption__sf h1{
+    font-weight: 800;
+}
+
+.col__caption__sf p{
+    font-size: 14px;
+}
+
+.submit__form .card{
+    border: none;
+    box-shadow: 5px 10px 15px 0  rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.submit__form .card-body{
+    margin-top: 5%;
+}
+
+.submit__form .card-body input{
+    margin-top: 3%;
+}
+
+.submit__form .submit__class{
+    margin-top: 5%;
+    margin-bottom: 8%;
+    text-align: center;
+}
+
+.submit__form a{
+    height: 50px;
+    width: 100%;
+    padding: 12px 15px;
+    color: white;
+    background-color: #5B7DB1;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s all ease;
+}
+
+.submit__form a:hover{
+    background-color: #61A4BC;
+    color: white;
+}
+
+/* End of Submit Form Section */ 
+
+/* Footer Section */
+
+.footer__section{
+    margin-top: 10%;
+    height: 400px;
+    background-color: #5B7DB1;
+}
+
+.footer__section .contact__me p{
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    padding-top: 8%;
+}
+
+.icon__cm{
+    text-align: center;
+    margin-top: 3%;
+}
+
+.icon__cm i{
+    font-size: 20px;
+    margin-left: 20px;
+    color: #5B7DB1;
+    height: 20px;
+    width: 20px;
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.nav__bottom{
+    margin-top: 12%;
+}
+
+.nav__bottom a{
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+/*End of Footer Section */
+
+
+/* Responsive Design */
+
+@media screen and (min-width:360px) and (max-width: 575px) {
+    
+    /* Main Section */
+
+    .row__main__section{
+        flex-wrap: wrap-reverse;
+    }
+
+    .col__image img{
+        display: block;
+        margin: 0 auto;
+        width: 350px;
+        height: auto;
+    }
+
+    .col__caption{
+        text-align: center;
+    }
+
+    .explore__ms{
+        margin-top: 10%;
+    }
+
+    .explore__btn{
+        width: 100%;
+    }
+
+    /* End of Main Section */
+
+
+    /* Explore Our Products Section */
+
+    .our__product{
+        margin-top: 20%;
+    }
+
+    /* End of Explore Our Products Section */
+
+    /* Related Product Section */
+
+    .related__product{
+        margin-top: 30%;
+    }
+
+    .related__product .view__product a{
+        margin-top: -5%;
+        width: 100%;
+    }
+
+    /* End of Related Product Section */
+
+
+    /* Get Offers Section */
+
+    .get__offers{
+        margin-top: 20%;
+    }
+
+    .image__go img{
+        width: 100%;
+    }
+    
+    .caption__go{
+        text-align: center;
+    }
+
+    /* End Of Get Offers Section */
+
+
+    /* Reviews Monitoring Section */
+
+    .reviews__monitoring{
+        margin-top: 20%;
+    }
+
+    .row__rm{
+        flex-wrap: wrap-reverse;
+    }
+
+    .col__caption__mr{
+        text-align: center;
+    }
+
+    .col__card__rm{
+        margin-top: 10%;
+    }
+
+    .reviews__monitoring .card{
+        width: 100%;
+    }
+
+    .other__sites a{
+        margin: 3% auto;
+    }
+
+    /* End of Reviews Monitoring Section */
+
+
+    /* Submit Form Section */
+
+    .submit__form{
+        margin-top: 20%;
+    }
+
+    .col__caption__sf{
+        text-align: center;
+    }
+
+    .submit__form .card{
+        margin: 10% 0;
+    
+    }
+    /* End of Submit Form Section */
+
+
+    /* Footer Section */
+
+    .footer__section{
+        height: 450px;
+    }
+
+    .icon__cm{
+        margin-top: 10%;
+    }
+
+    .nav__bottom .row{
+        margin-top: 20%;
+    }
+
+    .nav__bottom .row a{
+        margin-top: 5%;
+    }
+
+    /* End of Footer Section */
+
+}
+
+
+/* End of Responsive Design
