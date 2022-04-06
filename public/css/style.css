@@ -595,11 +595,11 @@ a.btn:hover{
 
 /* Search Car Page */
 
-/*
 .form{
 	margin-top: -2%;
-	z-index: 100;
-} */
+	position: relative;
+	z-index: 1;
+}
 
 .ct__form{
 	padding: 30px;
@@ -607,8 +607,6 @@ a.btn:hover{
 	background-color: #fff;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 	width: 80%;
-	margin-top: -2%;
-	z-index: 10;
 }
 
 .ct__form label{
@@ -628,6 +626,6 @@ a.btn:hover{
 	background-color: #5CB85F;
 	border: none;
 	font-weight: 600;
-	font-size: 12px;
+	font-size: 14px;
 	width: 100%;
 }
