@@ -73,7 +73,7 @@ a.btn{
 
 a.btn:hover{
 	color: #fff;
-	background: #000;
+	background: #3D7B3F;
 }
 
 .col__image img{
@@ -590,4 +590,44 @@ a.btn:hover{
 	}
 
 	/* End of Footer */
+}
+
+
+/* Search Car Page */
+
+/*
+.form{
+	margin-top: -2%;
+	z-index: 100;
+} */
+
+.ct__form{
+	padding: 30px;
+	border-radius: 15px;
+	background-color: #fff;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+	width: 80%;
+	margin-top: -2%;
+	z-index: 10;
+}
+
+.ct__form label{
+	font-size: 14px;
+}
+
+.ct__form input{
+	font-size: 15px;
+}
+
+.ct__form select{
+	font-size: 15px;
+}
+
+.row__button button{
+	height: 40px;
+	background-color: #5CB85F;
+	border: none;
+	font-weight: 600;
+	font-size: 12px;
+	width: 100%;
 }
