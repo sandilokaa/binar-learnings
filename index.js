@@ -40,7 +40,47 @@ const onRequest = (req, res) => {
             res.end(main);
 
             break;
+        
+        case "/js/binar.js":
+            const binarFile = path.join(PUBLIC_DIRECTORY, "scripts/binar.js");
+            const binar = fs.readFileSync(binarFile, "utf8");
 
+            res.setHeader("Content-Type", "text/javascript");
+            res.writeHead(200);
+            res.end(binar);
+
+            break;
+        
+        case "/js/app.example.js":
+                const appFile = path.join(PUBLIC_DIRECTORY, "scripts/app.example.js");
+                const app = fs.readFileSync(appFile, "utf8");
+    
+                res.setHeader("Content-Type", "text/javascript");
+                res.writeHead(200);
+                res.end(app);
+    
+                break;
+
+        case "/js/car.example.js":
+            const carFile = path.join(PUBLIC_DIRECTORY, "scripts/car.example.js");
+            const car = fs.readFileSync(carFile, "utf8");
+
+            res.setHeader("Content-Type", "text/javascript");
+            res.writeHead(200);
+            res.end(car);
+
+            break;
+
+        case "/js/main.example.js":
+            const mainExampleFile = path.join(PUBLIC_DIRECTORY, "scripts/main.example.js");
+            const mainExample = fs.readFileSync(mainExampleFile, "utf8");
+
+            res.setHeader("Content-Type", "text/javascript");
+            res.writeHead(200);
+            res.end(mainExample);
+
+            break;
+        
         case "/css/style.css":
             const cssFile = path.join(PUBLIC_DIRECTORY, "css/style.css");
             const css = fs.readFileSync(cssFile, "utf8");
@@ -80,25 +120,6 @@ const onRequest = (req, res) => {
             res.end(userImg);
     
             break;
-
-        case "/api/users":
-            if (req.method === "POST") {
-                // Get payload body
-                let body = "";
-                req.on("data", (chunk) => {
-                    body += chunk.toString(); // convert Buffer to string
-                    });
-                    req.on("end", () => {
-                    // JSON.stringify => ubah data dari Javascript ke format JSON
-                    fs.writeFileSync("./storage/user.json", body);
-
-                    res.setHeader("Content-Type", "application/json");
-                    res.writeHead(200);
-                    res.end("Berhasil mendaftarkan user");
-                });
-            }
-
-        break;
     }
 };
 
