@@ -1,5 +1,5 @@
 const http = require("http");
-const { PORT = 8082 } = process.env; // Ambil port dari environment variable
+const PORT = 8082; // Ambil port dari environment variable
 const HOST = "localhost";
 
 const fs = require("fs");
@@ -44,11 +44,6 @@ function onRequest(req, res) {
         const fileStream = fs.createReadStream(jsPath);
         res.writeHead(200, { "Content-Type": "application/javascript" });
         fileStream.pipe(res);
-    } else {
-        fs.readFile("./public/404.html", "UTF-8", function (err, html) {
-        res.writeHead(404, { "Content-Type": "text/html" });
-        res.end(html);
-        });
     }
 }
 
