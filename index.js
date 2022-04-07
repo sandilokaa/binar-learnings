@@ -92,7 +92,7 @@ const onRequest = (req, res) => {
             break;
 
         case "/images-landing-page/img_car.png":
-            const imagesFile = path.join(PUBLIC_DIRECTORY, "images/img_car.png");
+            const imagesFile = path.join(PUBLIC_DIRECTORY, "img_custom/img_car.png");
             const images = fs.readFileSync(imagesFile,"");
     
             res.setHeader("Content-Type", "image/png");
@@ -102,7 +102,7 @@ const onRequest = (req, res) => {
             break;
         
         case "/images-landing-page/img_service.png":
-            const imagesService = path.join(PUBLIC_DIRECTORY, "images/img_service.png");
+            const imagesService = path.join(PUBLIC_DIRECTORY, "img_custom/img_service.png");
             const service = fs.readFileSync(imagesService,"");
     
             res.setHeader("Content-Type", "image/png");
@@ -112,13 +112,24 @@ const onRequest = (req, res) => {
             break;
     
         case "/images-landing-page/user_profile.png":
-            const userImage = path.join(PUBLIC_DIRECTORY, "images/user_profile.png");
+            const userImage = path.join(PUBLIC_DIRECTORY, "img_custom/user_profile.png");
             const userImg = fs.readFileSync(userImage,"");
     
             res.setHeader("Content-Type", "image/png");
             res.writeHead(200);
             res.end(userImg);
     
+            break;
+
+        case "api/images-car":
+            if(url.match(".jpg$")){
+                const imagePath = path.join(PUBLIC_DIRECTORY, url);
+                const fileStream = fs.createReadStream(imagePath);
+                res.setHeader("Content-Type", "img/jpg");
+                res.writeHead(200);
+                fileStream.pipe(res);
+            }
+            
             break;
     }
 };

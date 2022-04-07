@@ -102,7 +102,6 @@
 	<!-- Form -->
 
 	<section class="form">
-		<div class="overlay"></div>	
 		<div class="container ct__form">
 			<form method="GET" action="">
 				<div class="row row__button">
@@ -117,16 +116,24 @@
 								</select>
 							</div>
 							<div class="col-12 col-lg-3">
-								<label for="tipe_driver" class="form-label">Tanggal</label>
+								<label for="dateInput class="form-label">Tanggal</label>
 								<input type="date" class="form-control" id="dateInput" placeholder="Pilih Tanggal">
 							</div>
 							<div class="col-12 col-lg-3">
-								<label for="tipe_driver" class="form-label">Waktu Jemput/Ambil</label>
+								<label for="timeInput" class="form-label">Waktu Jemput/Ambil</label>
 								<input type="time" class="form-control" id="timeInput" placeholder="Pilih Waktu">
 							</div>
 							<div class="col-12 col-lg-3">
-								<label for="tipe_driver" class="form-label">Jumlah Penumpang (optional)</label>
-								<input type="text" class="form-control" id="capacityInput" placeholder="Jumlah Penumpang">
+								<label for="capacityInput class="form-label">Jumlah Penumpang (optional)</label>
+								<select class="form-select" id="capacityInput">
+									<option hidden>Jumlah Penumpang</option>
+									<option value="1">1 Orang</option>
+									<option value="2">2 Orang</option>
+									<option value="3">3 Orang</option>
+									<option value="4">4 Orang</option>
+									<option value="5">5 Orang</option>
+									<option value="6">6 Orang</option>
+								</select>
 							</div>
 						</div>
 					</div>
@@ -135,12 +142,13 @@
 					</div>
 				</div>
 			</form>
+			<!-- End of Form -->
+			<div id="cars-container">
+
+			</div>
+			<!-- Get Data Car -->
 		</div>
 	</section>
-
-	<!-- End of Form -->
-	<div id="cars-container"></div>
-	<!-- Get Data Car -->
 
 	
 

@@ -1,6 +1,6 @@
 class App {
   constructor() {
-    this.clearButton = document.getElementById("clear-btn");
+    // this.clearButton = document.getElementById("clear-btn");
     this.loadButton = document.getElementById("load-btn");
     this.carContainerElement = document.getElementById("cars-container");
     this.driverType = document.getElementById("driverType");
