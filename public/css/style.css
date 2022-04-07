@@ -595,7 +595,7 @@ a.btn:hover{
 
 /* Search Car Page */
 
-.form{
+.form__section{
 	margin-top: -4%;
 	position: relative;
 	z-index: 1;
