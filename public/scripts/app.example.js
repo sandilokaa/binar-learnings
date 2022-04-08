@@ -56,10 +56,10 @@ class App {
         );
         if (
           car.capacity === parseInt(capacityInputValue) &&
-          car.available === Boolean(driverTypeValue) &&
-          car.availableAt.toISOString().substring(0, 10) == dateInputValue &&
-          car.availableAt.toISOString().substring(11, 16) < timeInputValue
-        ) {
+          car.available === Boolean(driverTypeValue) //&&
+          // car.availableAt.toISOString().substring(0, 10) == dateInputValue &&
+          // car.availableAt.toISOString().substring(11, 16) < timeInputValue
+        ){
           console.log(car);
           return car;
         }
