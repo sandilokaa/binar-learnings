@@ -66,9 +66,9 @@ class App {
       })
       .map((car) => {
         const col = document.createElement("div");
-        col.className = "col-4";
+        col.className = "col-12 col-lg-4";
         col.innerHTML = car.render();
-        baris.appendChild(col);
+        line.appendChild(col);
       });
     // Car.list.forEach((car) => {
     //   const node = document.createElement("div");

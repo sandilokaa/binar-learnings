@@ -1,9 +1,9 @@
 const http = require("http");
-const PORT = 8082; // Ambil port dari environment variable
-const HOST = "localhost";
-
 const fs = require("fs");
 const path = require("path");
+
+const PORT = 8082;
+const HOST = "localhost";
 
 // Request handler
 // Fungsi yang berjalan ketika ada request yang masuk.
@@ -20,7 +20,7 @@ function onRequest(req, res) {
         res.end(html);
         });
     } else if (url === "/getcars") {
-        const dataPath = path.join(__dirname, "data", "/car.json");
+        const dataPath = path.join(__dirname, "data", "/cars.json");
         const fileStream = fs.createReadStream(dataPath, "UTF-8");
         res.writeHead(200, { "Content-Type": "application/json" });
         fileStream.pipe(res);
