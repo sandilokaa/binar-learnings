@@ -36,30 +36,31 @@ class App {
     node.appendChild(newDiv);
 
     const line = document.createElement("div");
-    line.className= "row";
+    line.className = "row";
     this.carContainerElement.appendChild(line);
 
     const driverTypeValue = this.driverType.value;
     const dateInputValue = this.dateInput.value;
     const timeInputValue = this.timeInput.value;
     const capacityInputValue = this.capacityInput.value;
-    
-    console.log(timeInputValue);
-    
+
+    console.log(driverTypeValue);
+
     Car.list
       .filter((car) => {
-        console.log(car.availableAt.toISOString()); // toISOString untuk mengubah tanggal menjadi string
-        console.log(car.availableAt.toISOString().substring(11, 16));
-        console.log(
-          car.availableAt.toISOString().substring(0, 10) == dateInputValue &&
-            car.availableAt.toISOString().substring(11, 16) < timeInputValue
-        );
-        if (
-          car.capacity === parseInt(capacityInputValue) &&
-          car.available === Boolean(driverTypeValue) //&&
+        console.log(car.available);
+        // console.log(car.availableAt.toISOString()); // toISOString untuk mengubah tanggal menjadi string
+        // console.log(car.availableAt.toISOString().substring(11, 16));
+        // console.log(
+        //   car.availableAt.toISOString().substring(0, 10) == dateInputValue &&
+        //     car.availableAt.toISOString().substring(11, 16) < timeInputValue
+        // );
+        if (car.available === Boolean(driverTypeValue) &&
+          car.capacity === parseInt(capacityInputValue)
+          // &&
           // car.availableAt.toISOString().substring(0, 10) == dateInputValue &&
           // car.availableAt.toISOString().substring(11, 16) < timeInputValue
-        ){
+        ) {
           console.log(car);
           return car;
         }
@@ -70,13 +71,7 @@ class App {
         col.innerHTML = car.render();
         line.appendChild(col);
       });
-    // Car.list.forEach((car) => {
-    //   const node = document.createElement("div");
-    //   node.innerHTML = car.render();
-    //   this.carContainerElement.appendChild(node);
-    // });
-
-};
+  };
 
   async load() {
     const cars = await Binar.listCars();
