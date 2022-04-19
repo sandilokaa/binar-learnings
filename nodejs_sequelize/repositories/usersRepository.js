@@ -14,6 +14,14 @@ class UsersRepository{
 
         return createdUser;
     }
+
+    static async getById({id}){
+        const getUsersById = users.findOne({
+            where: {id}
+        });
+
+        return getUsersById;
+    }
 }
 
 module.exports = UsersRepository;

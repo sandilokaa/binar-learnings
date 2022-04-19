@@ -19,6 +19,12 @@ class UsersService{
         return createdUser;
     }
 
+    static async getById({id}){
+        // call repository user
+        const getUsersById = await userRepository.getById({id});
+        return getUsersById;
+    }
+
 }
 
 module.exports = UsersService;

@@ -17,4 +17,12 @@ const create = async (req, res) => {
     });
 }
 
-module.exports = {getAll, create};
+const getById = async (req, res) => {
+    const {id} = req.params;
+
+    const getUsersById = await userService.getById({id});
+
+    res.status(200).send(getUsersById);
+}
+
+module.exports = {getAll, create, getById};
