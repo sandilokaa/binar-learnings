@@ -13,11 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  posts.init({
-    id: {
-      primaryKey: true,
-      type:DataTypes.INTEGER
-    },
+  posts.init(
+  {
     title: DataTypes.STRING,
     description: DataTypes.STRING,
     user_id: DataTypes.INTEGER

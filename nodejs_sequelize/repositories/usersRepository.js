@@ -6,7 +6,10 @@ class UsersRepository{
         return getUsers;
     }
 
-    static async create({name, email}){
+    static async create({
+        name, 
+        email
+    }){
         const createdUser = users.create({
             name,
             email
@@ -21,6 +24,26 @@ class UsersRepository{
         });
 
         return getUsersById;
+    }
+
+    static async update({
+        id, 
+        name, 
+        email
+    }){
+        const updatedById = users.update({
+            name,
+            email
+        }, {
+            where: {id}
+        });
+        return updatedById;
+    }
+
+    static async deleteUsers({id}){
+        const deleteUsersById = users.destroy({
+            where: {id}
+        });
     }
 }
 

@@ -25,6 +25,18 @@ class UsersService{
         return getUsersById;
     }
 
+    static async update({id, name, email}){
+        // call repository user
+        const updatedById = await userRepository.update({id, name, email});
+        return updatedById;
+    }
+
+    static async deleteUsers({id}){
+        // call repository user
+        const deleteUsersById = await userRepository.deleteUsers({id});
+        return deleteUsersById;
+    }
+
 }
 
 module.exports = UsersService;
