@@ -25,6 +25,9 @@ app.put("/sequelize/users/update/:id", usersController.update);
 // Delete Data
 app.delete("/sequelize/users/delete/:id", usersController.deleteUsers);
 
+// Define Routes Join Tables
+app.get("/sequelize/users/:id/posts", usersController.getByUserId);
+
 
 // Define Routes Posts
 

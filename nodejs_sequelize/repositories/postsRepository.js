@@ -1,4 +1,4 @@
-const {posts} = require("../models");
+const {posts, users} = require("../models");
 
 class PostsRepository{
     static async getAll(){
@@ -43,6 +43,20 @@ class PostsRepository{
         });
 
         return deletedPostById;
+    }
+
+    static async getByUserId({ user_id: userId}){
+        const getPostByUserId = posts.findAll({
+            where: {user_id: userId},
+            include: [
+                {
+                    model: users,
+                    as: "user",
+                },
+            ],
+        });
+
+        return getPostByUserId;
     }
 }
 

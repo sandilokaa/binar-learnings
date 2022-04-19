@@ -1,4 +1,5 @@
 const userRepository = require("../repositories/usersRepository");
+const postsRepository = require("../repositories/postsRepository");
 
 class UsersService{
 
@@ -35,6 +36,11 @@ class UsersService{
         // call repository user
         const deleteUsersById = await userRepository.deleteUsers({id});
         return deleteUsersById;
+    }
+
+    static async getByUserId({id}){
+        const getPostByUserId = await postsRepository.getByUserId({user_id: id});
+        return getPostByUserId;
     }
 
 }
