@@ -1,4 +1,4 @@
-const generator = require("../utils/generator");
+//const generator = require("../utils/generator");
 
 let booksData = [{
         id: 987637,
@@ -22,8 +22,25 @@ let booksData = [{
 
 class BooksRepository{
 
-    static async getAll(){
+    static async getAll({title}){
+        if(title){
+            const filteredTitle = booksData.filter((t) => {
+                if(t.title == title){
+                    return title;
+                }
+            });
+            booksData = filteredTitle;
+        }
         return booksData;
+    }
+
+    static async getById({id}){
+        const getByBooksId = booksData.filter((b) => {
+            if(b.id == id){
+                return id;
+            }
+        });
+        return getByBooksId;
     }
 
 }

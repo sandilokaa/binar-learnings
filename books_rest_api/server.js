@@ -7,6 +7,7 @@ app.use(express.json());
 const booksController = require("./controllers/booksController");
 
 app.get("/books", booksController.getAll);
+app.get("/books/:id", booksController.getById);
 
 app.listen(PORT, () => {
     console.log(` Server listen on http://localhost:${PORT}`);

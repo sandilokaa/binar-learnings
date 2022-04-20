@@ -1,9 +1,17 @@
 const booksService = require("../services/booksService");
 
 const getAll = async (req, res) => {
-    const getAllBooks = await booksService.getAll();
+    const {title} = req.query;
+    const getAllBooks = await booksService.getAll({title});
 
-    res.status(200).send(getAll);
+    res.status(200).send(getAllBooks);
 }
 
-module.exports = {getAll};
+const getById = async (req, res) => {
+    const {id} = req.params;
+    const getByBooksId = await booksService.getById({id});
+
+    res.status(200).send(getByBooksId);
+}
+
+module.exports = {getAll, getById};
