@@ -11,6 +11,25 @@ class BooksService {
         const getByBooksId = await booksRepository.getById({id});
         return getByBooksId;
     }
+
+    static async create({title, author, price}){
+        const createdBookData = await booksRepository.create({
+            title, 
+            author, 
+            price
+        });
+        return createdBookData;
+    }
+
+    static async update({id, title, author, price}){
+        const updatedBookById = await booksRepository.update({
+            id, 
+            title, 
+            author, 
+            price
+        });
+        return updatedBookById;
+    }
 }
 
 module.exports = BooksService;

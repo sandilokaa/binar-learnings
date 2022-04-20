@@ -1,4 +1,4 @@
-//const generator = require("../utils/generator");
+const generator = require("../utils/generator");
 
 let booksData = [{
         id: 987637,
@@ -9,7 +9,7 @@ let booksData = [{
     {
         id: 357238,
         title: "Buku 2",
-        author: "Penulis 3",
+        author: "Penulis 2",
         price: 9000
     },
     {
@@ -43,6 +43,45 @@ class BooksRepository{
         return getByBooksId;
     }
 
+    static async create({title, author, price}){
+        const generatedId = await generator.generateID();
+
+        booksData.push({
+            id: generatedId,
+            title,
+            author,
+            price
+        });
+
+        return {
+            id: generatedId,
+            title,
+            author,
+            price
+        }
+    }
+
+    static async update({id, title, author, price}){
+        let updatedBook = {};
+        const updatedBookById = booksData.filter((u) => {
+            if(u.id == id){
+                u.title = title;
+                u.author = author;
+                u.price = price;
+
+                updatedBook = {
+                    id: u.id,
+                    title: u.title,
+                    author: u.author,
+                    price: u.price
+                }
+            }
+            return u;
+        });
+
+        booksData = updatedBookById;
+        return updatedBook;
+    }
 }
 
 module.exports = BooksRepository;

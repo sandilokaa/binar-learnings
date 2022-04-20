@@ -14,4 +14,24 @@ const getById = async (req, res) => {
     res.status(200).send(getByBooksId);
 }
 
-module.exports = {getAll, getById};
+const create = async (req, res) => {
+    const {title, author, price} = req.body;
+    const createdBookData = await booksService.create({
+        title, 
+        author, 
+        price
+    });
+    
+    res.status(201).send(createdBookData); 
+}
+
+const update = async (req, res) => {
+    const {id} = req.params;
+    const {title, author, price} = req.body;
+
+    const updatedBookById = await booksService.update({id, title, author, price});
+
+    res.status(200).send(updatedBookById);
+}
+
+module.exports = {getAll, getById, create, update};
