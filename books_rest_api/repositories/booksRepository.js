@@ -82,6 +82,25 @@ class BooksRepository{
         booksData = updatedBookById;
         return updatedBook;
     }
+
+    static async deleteData({id}){
+        let deletedBook = {};
+        const deletedByBookId = booksData.filter((d) => {
+            if(d.id == id){
+                deletedBook = {
+                    id: d.id,
+                    title: d.title,
+                    author: d.author,
+                    price: d.price
+                }
+            }else{
+                return d;
+            }
+        });
+
+        booksData = deletedByBookId;
+        return deletedBook;
+    }
 }
 
 module.exports = BooksRepository;

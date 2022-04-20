@@ -34,4 +34,11 @@ const update = async (req, res) => {
     res.status(200).send(updatedBookById);
 }
 
-module.exports = {getAll, getById, create, update};
+const deleteData = async (req, res) => {
+    const {id} = req.params;
+    
+    const deletedByBookId = await booksService.deleteData({id});
+    res.status(200).send(deletedByBookId);
+}
+
+module.exports = {getAll, getById, create, update, deleteData};

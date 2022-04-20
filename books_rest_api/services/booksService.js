@@ -30,6 +30,11 @@ class BooksService {
         });
         return updatedBookById;
     }
+
+    static async deleteData({id}){
+        const deletedByBookId = await booksRepository.deleteData({id});
+        return deletedByBookId;
+    }
 }
 
 module.exports = BooksService;
