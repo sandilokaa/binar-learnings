@@ -42,6 +42,7 @@ Berikut endpoint REST API serta contoh request body dan response body:
 - Dan terakhir klik send untuk create data, data dikembalikan dalam bentuk HTML.
 
 Lampiran :
+
 Berikut lampiran yang bisa saya berikan sebagai gambaran challenge di chapter 5 ini.
 
 **Postman**
@@ -51,11 +52,13 @@ Postman merupakan sebuah aplikasi yang berfungsi sebagai REST CLIENT untuk uji c
 
 
 **PGAdmin**
+
 PGAdmin merupakan tool yang biasa digunakan untuk membuat database PostgreSQL.
 
 ![diagram](./views/assets/img/Screenshot%20(1519).png)
 
 **Localhost**
+
 Localhost merupakan virtual server yang biasa digunakan oleh para programmer atau developer.
 
 ![diagram](./views/assets/img/cmd_binar.png)
