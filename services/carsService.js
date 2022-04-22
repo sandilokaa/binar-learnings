@@ -30,7 +30,7 @@ class CarsService{
             size, 
             image,
         });
-
+        console.log(updatedCar);
         return updatedCar;
     }
 

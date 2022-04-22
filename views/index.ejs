@@ -115,70 +115,63 @@
             <!-- Cards -->
             <section class="display-all-cars">
                 <div class="container">
-                    <form action="">
-                        <div class="row">
-                            <% cars.map((car) => { %>
-                            <div class="col-12 col-lg-4 mt-4">
-                                <div class="card">
-                                    <img src="<%= car.image %>" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h6 class="card-title"><%= car.name %></h6>
-                                        <p class="card-text">Rp. <%= car.price %> ,00- / hari</p>
-                                        <p class="text-muted"><%= car.createdAt %></p>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <a data-id="<%= car.id %>" role="button" data-toggle="modal" data-target="#exampleDeletedCar" class="btn delete">
-                                                    <div class="icon_button">
-                                                        <i class="fa-solid fa-trash-can"></i>
+                    <div class="row">
+                        <% cars.map((car) => { %>
+                        <div class="col-12 col-lg-4 mt-4">
+                            <div class="card">
+                                <img src="<%= car.image %>" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h6 class="card-title"><%= car.name %></h6>
+                                    <p class="card-text">Rp. <%= car.price %> ,00- / hari</p>
+                                    <p class="text-muted"><%= car.createdAt %></p>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <button data-toggle="modal" data-target="#exampleDeletedCar" class="btn">
+                                                <div class="icon_button">
+                                                    <i class="fa-solid fa-trash-can"></i>
+                                                </div>
+                                                Delete
+                                            </button>
+                                            <!-- Modal -->
+                                            <form action="http://localhost:2000/delete-car/<%= car.id %>" method="post">
+                                                <div class="modal fade" id="exampleDeletedCar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-body">
+                                                            <div class="image_deleted_car">
+                                                                <img src="/assets/img/img-BeepBeep.png" alt="">
+                                                            </div>
+                                                            <h5>Menghapus Data Mobil</h5>
+                                                            <p>Setelah dihapus, data mobil tidak dapat dikembalikan. Yakin ingin menghapus?</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="submit" class="btn accept-button">Ya</button>
+                                                                <button type="button" class="btn dismiss-button" data-dismiss="modal">Tidak</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    Delete
-                                                </a>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <a href="/update-car/<%= car.id %>" class="btn">
-                                                    <div class="icon_button">
-                                                        <i class="fa-solid fa-pen-to-square"></i>
-                                                    </div>
-                                                    Edit
-                                                </a>
-                                            </div>
+                                                </div>
+                                            </form>
+                                            <!-- End Modal-->
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a href="/update-car/<%= car.id %>" class="btn">
+                                                <div class="icon_button">
+                                                    <i class="fa-solid fa-pen-to-square"></i>
+                                                </div>
+                                                Edit
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <% }) %> 
                         </div>
-                    </form>
+                        <% }) %> 
+                    </div>
                 </div>
             </section>
             <!-- End Cards-->
-
-            <!-- Modal -->
-            <% cars.map((car) => { %>
-            <form action="http://localhost:2000/delete-car/<%= car.id %>" method="delete">
-                <div class="modal fade" id="exampleDeletedCar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                            <div class="image_deleted_car">
-                                <img src="/assets/img/img-BeepBeep.png" alt="">
-                            </div>
-                            <h5>Menghapus Data Mobil</h5>
-                            <p>Setelah dihapus, data mobil tidak dapat dikembalikan. Yakin ingin menghapus?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn accept-button">Ya</button>
-                                <button type="button" class="btn dismiss-button" data-dismiss="modal">Tidak</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <% }) %>
-            <!-- End Modal -->
-
         </div>
-        
     </div>
 
 

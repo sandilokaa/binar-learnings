@@ -205,7 +205,7 @@ body {
     cursor: pointer;
 }
 
-.display-all-cars a.delete{
+.display-all-cars button.btn{
     color: #FA2C5A;
     font-size: 14px;
     height: 40px;
@@ -216,10 +216,6 @@ body {
     border: 2px solid #FA2C5A;
     text-align: center;
     cursor: pointer;
-}
-
-.display-all-cars a.delete:hover{
-    color: #FA2C5A;
 }
 
 .icon_button{

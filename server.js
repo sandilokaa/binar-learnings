@@ -18,14 +18,10 @@ app.set("view engine", "ejs");
 // Define Assets
 app.use(express.static(__dirname + '/views'));
 
+// ========= Render Page ====================
+
 // Render Home
-app.get("/", async (req, res) => {
-    const {id} = req.params;
-    const getCars = await carsService.getAll({id}); 
-    res.render("index.ejs",{
-        cars: getCars,
-    });
-});
+app.get("/", carsController.renderHomePage);
 
 // Render Add Car Page
 app.get("/add-car", async (req, res) => {
@@ -33,20 +29,15 @@ app.get("/add-car", async (req, res) => {
 });
 
 // Render Update Car Page
-app.get("/update-car/:id", async (req, res) => {
-    const {id} = req.params;
-    const car = await carsService.getById({id}); 
-    res.render("update_car.ejs",{
-        car: car,
-    });
-});
+app.get("/update-car/:id", carsController.renderUpdateById);
 
-// Define Routes CRUD
+
+// ========== Define Routes CRUD ===========================
 app.get("/getAllCars", carsController.getAll);
 app.post("/add-car/create", carsController.create);
 app.post("/update-car/update/:id", carsController.update);
 app.get("/getById/:id", carsController.getById);
-app.delete("/delete-car/:id", carsController.deleteCar);
+app.post("/delete-car/:id", carsController.deleteCar);
 
 app.listen(PORT, () => {
     console.log(`Server listen on http://localhost:${PORT}`);
