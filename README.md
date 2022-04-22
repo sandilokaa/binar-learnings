@@ -18,3 +18,12 @@ Berikut Entity Relationship Diagram menggunakan (https://dbdiagram.io/)
 
 
 ## Endpoint REST API
+
+Berikut endpoint REST API serta contoh request body dan response body:
+
+- Pada postman atur method post dan isi url nya
+
+** Contoh **
+```
+{{base_url}}/add-car/create
+```
