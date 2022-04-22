@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" 
+    crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <title>Car Management Dashboard</title>
+</head>
+<body>
+    
+    <!-- Wrapper -->
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="navbar-brand"></div>
+            </div>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#">
+                        <div class="icon">
+                            <i class="fas fa-dashboard"></i>
+                        </div>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="/">
+                        <div class="icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        Cars
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Plain Part -->
+
+        <div id="plain">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <div class="navbar-brand logo"></div>
+                </div>
+            </nav>
+
+            <div class="container">
+                <div class="caption">
+                    <h6>CARS</h6>
+                    <p>List Cars</p>
+                </div>
+            </div>
+            
+            <div class="list-cars"></div>
+        </div>
+
+        <!-- End Plain Part -->
+    
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <button type="button" id="sidebarCollapse" class="btn btn-light">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <form class="form-inline my-2 my-lg-0 ml-auto">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                        <form class="form-inline ml-3">
+                            <div class="profile-user">
+                                <img src="/assets/img/user_profile.png" alt="">
+                                <a href="#"> Sanlokaja </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="parts-section">
+                <div class="container">
+                    <p><strong>Cars <i class="fa-solid fa-angle-right"></i> List Car 
+                        <i class="fa-solid fa-angle-right"></i></strong> <span class="directory">Add New Car </span> 
+                    </p>
+                    <h5>Add New Car</h5>
+                </div>
+            </section>
+
+            <section class="form_add_new_car">
+                <div class="container">
+                    <form action="http://localhost:2000/add-car/create" method="post">
+                        <div class="add_new_car">
+                            <div class="form-group row">
+                                <label for="name" class="col-sm-2 col-form-label">Nama<span class="required">*</span></label>
+                                <div class="col-sm-5">
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Avanza" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="price" class="col-sm-2 col-form-label">Sewa Per Hari<span class="required">*</span></label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" name="price" id="price" placeholder="Rp. 0,-" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="size" class="col-sm-2 col-form-label">Ukuran<span class="required">*</span></label>
+                                <div class="col-sm-5">
+                                    <select name="size" id="size" class="form-control">
+                                        <option value="small">Small</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="large">Large</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="image" class="col-sm-2 col-form-label">Foto<span class="required">*</span></label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" name="image" id="image" placeholder="https://placeimg.com/640/480/any" autocomplete="off">
+                                    <p class="text-muted">File size max. 2MB</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="decision_button">
+                            <div class="container">
+                                <a href="/add-car" role="button" class="btn cancel"> Cancel</a>
+                                <button type="submit" class="btn save"> Save </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script src="/assets/js/sidebar.js"></script>
+</body>
+</html>

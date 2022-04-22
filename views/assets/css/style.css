@@ -1,0 +1,341 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #F4F5F7;
+}
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    /* border: 2px solid #6d7fcc; */
+    height: 100%;
+}
+
+/* Side Bar */
+
+#sidebar {
+    background: #0D28A6;
+    color: #fff;
+    transition: all 0.3s;
+    width: 6%;
+    height: 100vh;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #0D28A6;
+}
+
+.navbar-brand{
+    width: 40px;
+    height: 40px;
+    background: #CFD4ED;
+}
+
+#sidebar ul li a {
+    padding: 6px 5px;
+    font-size: 12px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.icon{
+    font-size: 20px;
+    text-align: center;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+
+
+#sidebar.active .dropdown-toggle::after {
+    top: auto;
+    bottom: 10px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+}
+
+/* End Side Bar */
+
+/* Plain */
+
+#plain{
+    width: 25%;
+    background-color: #fff;
+    /* border-right: 2px solid #6d7fcc; */
+}
+
+.logo{
+    height: 40px;
+    width: 120px;
+    background: #CFD4ED;
+}
+
+.caption h6{
+    margin-top: 19%;
+    font-size: 14px;
+    color: #8A8A8A;
+}
+
+.caption p{
+    font-size: 14px;
+    margin-top: 14%;
+    font-weight: 600;
+}
+
+.list-cars{
+    margin-top: -47px;
+    background: #CFD4ED;
+    height: 40px;
+    width: 100%;
+}
+
+
+/* Content */
+
+#content{
+    /* border: 2px solid #7386D5; */
+    width: 100%;
+}
+
+/* Navbar horizontal */
+.navbar{
+    padding: 20px;
+    box-shadow: 5px 5px 15px 0px  rgba(0, 0, 0, 0.2);
+}
+
+#content .profile-user img{
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+
+#content .profile-user a{
+    text-decoration: none;
+    color: #000;
+    margin-left: 5px;
+}
+
+.parts-section p{
+    margin-top: 4%;
+    font-size: 14px;
+}
+
+.parts-section h5{
+    margin-top: 3%;
+    font-weight: 700;
+}
+
+.parts-section .directory{
+    color: #222222;
+}
+
+.parts-section a.btn{
+    color: #fff;
+    float: right;
+    font-size: 14px;
+    height: 40px;
+    width: 150px;
+    padding: 9px 12px;
+    background-color: #0D28A6;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 0;
+    transform: translateY(-40px);
+}
+
+.choose-size a.active{
+    color: #0D28A6;
+    font-size: 14px;
+    background-color: #CFD4ED;
+    height: 30px;
+    width: 80px;
+    padding: 5px 9px;
+    border: 1px solid #0D28A6;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+.choose-size a.size{
+    color: #CFD4ED;
+    font-size: 14px;
+    height: 30px;
+    width: 80px;
+    padding: 5px 9px;
+    border: 1px solid #CFD4ED;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+.display-all-cars{
+    margin-top: 5%;
+}
+
+.display-all-cars .card img{
+    height: 150px;
+    width: 100%;
+    border-radius: 2%;
+}
+
+.display-all-cars a.btn{
+    color: #fff;
+    font-size: 14px;
+    height: 40px;
+    width: 120px;
+    padding: 9px 12px;
+    font-weight: 600;
+    background-color: #5CB85F;
+    text-align: center;
+    cursor: pointer;
+}
+
+.display-all-cars button.btn{
+    color: #FA2C5A;
+    font-size: 14px;
+    height: 40px;
+    width: 120px;
+    padding: 9px 12px;
+    font-weight: 600;
+    background-color: #fff;
+    border: 2px solid #FA2C5A;
+    text-align: center;
+    cursor: pointer;
+}
+
+.icon_button{
+    float: left;
+    font-size: 15px;
+}
+
+/* End Content */
+
+/* Add New Car */
+.form_add_new_car{
+    margin-top: 3%;
+}
+
+.form_update_car{
+    margin-top: 3%;
+}
+
+.form_add_new_car .required{
+    color: #FA2C5A;
+}
+
+.add_new_car{
+    background-color: #fff;
+    padding: 20px 30px;
+}
+
+.updated-car{
+    background-color: #fff;
+    padding: 20px 30px;
+}
+
+.form_add_new_car  p{
+    font-size: 12px;
+    margin-top: 1%;
+}
+
+.form_update_car  p{
+    font-size: 12px;
+    margin-top: 1%;
+}
+
+.decision_button{
+    margin-left: 0;
+    margin-top: 10%;
+}
+
+.decision_button a.cancel{
+    color: #0D28A6;
+    font-size: 14px;
+    height: 40px;
+    width: 120px;
+    padding: 9px 12px;
+    font-weight: 600;
+    background-color: #fff;
+    border: 2px solid #0D28A6;
+    text-align: center;
+    cursor: pointer;
+}
+
+.decision_button button.save{
+    color: #fff;
+    font-size: 14px;
+    height: 40px;
+    width: 120px;
+    padding: 9px 12px;
+    font-weight: 600;
+    background-color: #0D28A6;
+    text-align: center;
+    cursor: pointer;
+}
+
+#exampleDeletedCar{
+    margin-top: 10%;
+}
+
+.modal-body{
+    text-align: center;
+}
+
+.modal-footer{
+    margin: 0 auto;
+    display: block;
+}
+
+#exampleDeletedCar img{
+    width: 200px;
+    height: 150px;
+}
+
+#exampleDeletedCar h5{
+    margin: 4% 0;
+    font-weight: 700;   
+}
+
+#exampleDeletedCar p{
+    font-size: 12px;
+}
+
+#exampleDeletedCar button.accept-button{
+    color: #fff;
+    font-size: 14px;
+    height: 40px;
+    width: 120px;
+    padding: 9px 12px;
+    font-weight: 600;
+    background-color: #0D28A6;
+    text-align: center;
+    cursor: pointer;
+}
+
+#exampleDeletedCar button.dismiss-button{
+    color: #0D28A6;
+    font-size: 14px;
+    height: 40px;
+    width: 120px;
+    padding: 9px 12px;
+    font-weight: 600;
+    background-color: #fff;
+    border: 2px solid #0D28A6;
+    text-align: center;
+    cursor: pointer;
+}
