@@ -10,6 +10,11 @@ class CarsRepository{
         return getCars;
     }
 
+    static async getById({id}){
+        const getByCarsId = await cars.findAll({where: {id: id}});
+        return getByCarsId;
+    }
+
     static async create({name, price, size, image}){
         const createdCar = cars.create({
             name, 

@@ -35,13 +35,14 @@ app.get("/add-car", async (req, res) => {
 // Render Update Car Page
 app.get("/update-car/:id", async (req, res) => {
     const {id} = req.params;
-    const updatedCar = await carsService.getAll({id}); 
+    const updatedCar = await carsService.getById({id}); 
     res.render("update_car.ejs",{
         updated: updatedCar,
     });
 });
 
 // Define Routes CRUD
+app.get("/getAllCars", carsController.getAll);
 app.post("/add-car/create", carsController.create);
 app.post("/update-car/update/:id", carsController.update);
 app.get("/getById/:id", carsController.getById);

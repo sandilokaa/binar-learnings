@@ -28,7 +28,7 @@ class CarsService{
             name, 
             price, 
             size, 
-            image
+            image,
         });
 
         return updatedCar;
