@@ -23,7 +23,20 @@ Berikut endpoint REST API serta contoh request body dan response body:
 
 - Pada postman atur method post dan isi url nya
 
-**Contoh**
+**Contoh:**
 ```
 {{base_url}}/add-car/create
 ```
+
+- Setelah itu pilih body, klik radio button row lalu pilih format menjadi JSON:
+
+**Contoh:**
+```
+{
+    "name": "Honda Mobilio",
+    "price": 250000,
+    "size": "medium",
+    "image": "https://resources.compressor-express.com/images/brands2/honda-mobilio.png"
+}
+```
+- Dan terakhir klik send untuk create data.
