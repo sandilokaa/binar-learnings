@@ -32,7 +32,8 @@ http://localhost:2000/getAllCars
 
 - Dan terakhir klik send untuk create data, data dikembalikan dalam bentuk HTML.
 
-### Get Car By Id
+
+## Get Car By Id
 
 - Pada postman atur method menjadi get dan isi url nya
 
@@ -43,7 +44,8 @@ http://localhost:2000/getById/:id
 
 - Dan terakhir klik send untuk create data, data dikembalikan dalam bentuk HTML.
 
-### Create Data
+
+## Create Data
 
 - Pada postman atur method menjadi post dan isi url nya
 
@@ -65,7 +67,8 @@ http://localhost:2000/add-car/create
 ```
 - Dan terakhir klik send untuk create data, data dikembalikan dalam bentuk HTML.
 
-### Edit Data
+
+## Edit Data
 
 - Pada postman atur method menjadi post dan isi url nya
 
@@ -87,7 +90,8 @@ http://localhost:2000/update-car/update/:id
 ```
 - Dan terakhir klik send untuk create data, data dikembalikan dalam bentuk HTML.
 
-### Delete Data
+
+## Delete Data
 
 - Pada postman atur method menjadi post dan isi url nya
 
