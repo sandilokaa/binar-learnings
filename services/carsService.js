@@ -2,9 +2,9 @@ const carsRepository = require("../repositories/carsRepository");
 
 class CarsService{
 
-    static async getAll({id}){
+    static async getAll(){
         // Memanggil Repository
-        const getCars = await carsRepository.getAll({id});
+        const getCars = await carsRepository.getAll();
 
         return getCars;
     }

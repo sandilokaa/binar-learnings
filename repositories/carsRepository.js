@@ -1,11 +1,8 @@
 const {cars} = require("../models");
 
 class CarsRepository{
-    static async getAll({id}){
-        let getCars = "";
-
-        if (id) getCars = await cars.findAll({ where: { id: id } });
-        else getCars = await cars.findAll();
+    static async getAll(){
+        const getCars = await cars.findAll();
 
         return getCars;
     }

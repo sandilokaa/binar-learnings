@@ -1,8 +1,7 @@
 const carsService = require("../services/carsService");
 
 const getAll = async (req, res) => {
-    const{id} = req.params;
-    const getCars = await carsService.getAll({id});
+    const getCars = await carsService.getAll();
     return getCars;
 }
 
