@@ -40,3 +40,14 @@ Berikut endpoint REST API serta contoh request body dan response body:
 }
 ```
 - Dan terakhir klik send untuk create data.
+
+Lampiran :
+
+**Postman**
+
+
+**PGAdmin**
+![diagram](./views/assets/img/Screenshot%20(1519).png)
+
+**Localhost**
+![diagram](./views/assets/img/cmd_binar.png)
