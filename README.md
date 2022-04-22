@@ -21,11 +21,35 @@ Berikut Entity Relationship Diagram menggunakan (https://dbdiagram.io/)
 
 Berikut endpoint REST API serta contoh request body dan response body:
 
-- Pada postman atur method post dan isi url nya
+### Get List Car
+
+- Pada postman atur method menjadi get dan isi url nya
 
 **Contoh:**
 ```
-{{base_url}}/add-car/create
+http://localhost:2000/getAllCars
+```
+
+- Dan terakhir klik send untuk create data, data dikembalikan dalam bentuk HTML.
+
+### Get Car By Id
+
+- Pada postman atur method menjadi get dan isi url nya
+
+**Contoh:**
+```
+http://localhost:2000/getById/:id
+```
+
+- Dan terakhir klik send untuk create data, data dikembalikan dalam bentuk HTML.
+
+### Create Data
+
+- Pada postman atur method menjadi post dan isi url nya
+
+**Contoh:**
+```
+http://localhost:2000/add-car/create
 ```
 
 - Setelah itu pilih body, klik radio button row lalu pilih format menjadi JSON:
@@ -41,24 +65,35 @@ Berikut endpoint REST API serta contoh request body dan response body:
 ```
 - Dan terakhir klik send untuk create data, data dikembalikan dalam bentuk HTML.
 
-## Lampiran 
+### Edit Data
 
-Berikut lampiran yang bisa saya berikan sebagai gambaran challenge di chapter 5 ini.
+- Pada postman atur method menjadi post dan isi url nya
 
-### Postman
+**Contoh:**
+```
+http://localhost:2000/update-car/update/:id
+```
 
-Postman merupakan sebuah aplikasi yang berfungsi sebagai REST CLIENT untuk uji coba REST API.
+- Setelah itu pilih body, klik radio button row lalu pilih format menjadi JSON:
 
-![diagram](./views/assets/img/Screenshot%20(1520).png)
+**Contoh:**
+```
+{
+    "name": "Honda Mobilio 2018",
+    "price": 250000,
+    "size": "medium",
+    "image": "https://resources.compressor-express.com/images/brands2/honda-mobilio.png"
+}
+```
+- Dan terakhir klik send untuk create data, data dikembalikan dalam bentuk HTML.
 
-### PGAdmin
+### Delete Data
 
-PGAdmin merupakan tool yang biasa digunakan untuk membuat database PostgreSQL.
+- Pada postman atur method menjadi post dan isi url nya
 
-![diagram](./views/assets/img/Screenshot%20(1519).png)
+**Contoh:**
+```
+http://localhost:2000/delete-car/:id
+```
 
-### Localhost
-
-Localhost merupakan virtual server yang biasa digunakan oleh para programmer atau developer.
-
-![diagram](./views/assets/img/cmd_binar.png)
+- Dan terakhir klik send untuk create data, data dikembalikan dalam bentuk HTML.
