@@ -103,26 +103,25 @@
 
             <section class="form_update_car">
                 <div class="container">
-                    <% updated.map((update) => {%>
-                    <form action="http://localhost:2000/update-car/update/<%= update.id %>" method="post">
+                    <form action="http://localhost:2000/update-car/update/<%= car.id %>" method="post">
                         <div class="updated-car">
                             <div class="form-group row">
                                 <label for="name" class="col-sm-2 col-form-label">Nama<span class="required">*</span></label>
                                 <div class="col-sm-5">
-                                    <input type="text" name="name" id="name" class="form-control" value="<%= update.name %>" autocomplete="off">
+                                    <input type="text" name="name" id="name" class="form-control" value="<%= car.name %>" autocomplete="off">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="price" class="col-sm-2 col-form-label">Sewa Per Hari<span class="required">*</span></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" name="price" id="price"  value="<%= update.price %>" autocomplete="off">
+                                    <input type="text" class="form-control" name="price" id="price"  value="<%= car.price %>" autocomplete="off">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="size" class="col-sm-2 col-form-label">Ukuran<span class="required">*</span></label>
                                 <div class="col-sm-5">
                                     <select name="size" id="size" class="form-control">
-                                        <option  value="<%= update.size %>"> <%= update.size %> </option>
+                                        <option  value="<%= car.size %>"> <%= car.size %> </option>
                                         <option value="small">Small</option>
                                         <option value="medium">Medium</option>
                                         <option value="large">Large</option>
@@ -132,19 +131,18 @@
                             <div class="form-group row">
                                 <label for="image" class="col-sm-2 col-form-label">Foto<span class="required">*</span></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" name="image" id="image" value="<%= update.image %>" autocomplete="off">
+                                    <input type="text" class="form-control" name="image" id="image" value="<%= car.image %>" autocomplete="off">
                                     <p class="text-muted">File size max. 2MB</p>
                                 </div>
                             </div>
                         </div>
                         <div class="decision_button">
                             <div class="container">
-                                <a href="/update-car/<%= update.id %>" role="button" class="btn cancel"> Cancel</a>
+                                <a href="/update-car/<%= car.id %>" role="button" class="btn cancel"> Cancel</a>
                                 <button type="submit" class="btn save"> Save </button>
                             </div>
                         </div>
                     </form>
-                    <% }) %>
                 </div>
             </section>
         </div>

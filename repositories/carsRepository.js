@@ -8,7 +8,7 @@ class CarsRepository{
     }
 
     static async getById({id}){
-        const getByCarsId = await cars.findAll({where: {id: id}});
+        const getByCarsId = await cars.findOne({where: {id: id}});
         return getByCarsId;
     }
 

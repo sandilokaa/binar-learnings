@@ -127,12 +127,12 @@
                                         <p class="text-muted"><%= car.createdAt %></p>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <button type="button" data-toggle="modal" data-target="#exampleDeletedCar" class="btn"> 
+                                                <a data-id="<%= car.id %>" role="button" data-toggle="modal" data-target="#exampleDeletedCar" class="btn delete">
                                                     <div class="icon_button">
                                                         <i class="fa-solid fa-trash-can"></i>
                                                     </div>
                                                     Delete
-                                                </button>
+                                                </a>
                                             </div>
                                             <div class="col-md-6">
                                                 <a href="/update-car/<%= car.id %>" class="btn">

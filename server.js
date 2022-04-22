@@ -35,9 +35,9 @@ app.get("/add-car", async (req, res) => {
 // Render Update Car Page
 app.get("/update-car/:id", async (req, res) => {
     const {id} = req.params;
-    const updatedCar = await carsService.getById({id}); 
+    const car = await carsService.getById({id}); 
     res.render("update_car.ejs",{
-        updated: updatedCar,
+        car: car,
     });
 });
 
