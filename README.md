@@ -8,6 +8,7 @@ Untuk melengkapi kebutuhan pembuatan challenge bisa dilihat link di bawah ini :
 - Express.Js `https://expressjs.com/`
 - Sequelize `https://sequelize.org/`
 - Postgresql `https://www.postgresql.org/docs/`
+- DBDiagram `https://dbdiagram.io/`
 
 ## Entity Relationship Diagram
 
