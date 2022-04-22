@@ -23,7 +23,7 @@ Berikut endpoint REST API serta contoh request body dan response body:
 
 - Pada postman atur method post dan isi url nya
 
-** Contoh **
+**Contoh**
 ```
 {{base_url}}/add-car/create
 ```
