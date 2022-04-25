@@ -126,33 +126,12 @@
                                     <p class="text-muted"><%= car.createdAt %></p>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <button data-toggle="modal" data-target="#exampleDeletedCar" class="btn">
+                                            <button value="<%= car.id %>" data-toggle="modal" data-target="#exampleDeletedCar" data-id="<%= car.id %>" class="btn deleteButton">
                                                 <div class="icon_button">
                                                     <i class="fa-solid fa-trash-can"></i>
                                                 </div>
                                                 Delete
                                             </button>
-                                            <!-- Modal -->
-                                            <form action="http://localhost:2000/delete-car/<%= car.id %>" method="post">
-                                                <div class="modal fade" id="exampleDeletedCar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-body">
-                                                            <div class="image_deleted_car">
-                                                                <img src="/assets/img/img-BeepBeep.png" alt="">
-                                                            </div>
-                                                            <h5>Menghapus Data Mobil</h5>
-                                                            <p>Setelah dihapus, data mobil tidak dapat dikembalikan. Yakin ingin menghapus?</p>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="submit" class="btn accept-button">Ya</button>
-                                                                <button type="button" class="btn dismiss-button" data-dismiss="modal">Tidak</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <!-- End Modal-->
                                         </div>
                                         <div class="col-md-6">
                                             <a href="/update-car/<%= car.id %>" class="btn">
@@ -167,6 +146,31 @@
                             </div>
                         </div>
                         <% }) %> 
+
+                        <!-- Modal -->
+                        <form id="formDelete" action="http://localhost:2000/delete-car/" method="post">
+                            <div class="modal fade" id="exampleDeletedCar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                        <div class="image_deleted_car">
+                                            <img src="/assets/img/img-BeepBeep.png" alt="">
+                                        </div>
+                                        <h5>Menghapus Data Mobil</h5>
+                                        <p>Setelah dihapus, data mobil tidak dapat dikembalikan. Yakin ingin menghapus?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn accept-button">
+                                                Ya
+                                            </button>
+                                            <button type="button" class="btn dismiss-button" data-dismiss="modal">Tidak</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- End Modal-->
+
                     </div>
                 </div>
             </section>
@@ -184,7 +188,21 @@
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-    <!-- Custom JS -->
-    <script src="/assets/js/sidebar.js"></script>
+    <!-- Custom JS
+    <script src="/assets/js/sidebar.js"></script>  -->
+
+    <script>
+        const deleteButton = document.getElementsByClassName("deleteButton");
+        console.log(deleteButton);
+        Array.from(deleteButton).forEach(btn => {
+            btn.addEventListener("click", function(){
+                console.log(btn.value);
+
+                const form = document.getElementById("formDelete");
+                form.action = form.action + btn.value;
+                console.log(form.action);
+            })
+        })
+    </script>
 </body>
 </html>

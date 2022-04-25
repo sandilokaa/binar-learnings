@@ -32,6 +32,7 @@ app.get("/add-car", async (req, res) => {
 app.get("/update-car/:id", carsController.renderUpdateById);
 
 
+
 // ========== Define Routes CRUD ===========================
 app.get("/getAllCars", carsController.getAll);
 app.post("/add-car/create", carsController.create);
