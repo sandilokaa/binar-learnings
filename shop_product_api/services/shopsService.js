@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const SALT_ROUND = 10;
 
 class ShopsService {
-    static async updateByID({id, email, name, phone_number, password}){
+    static async updateByID({id, shop_id, email, name, phone_number, password}){
         
         if(shop_id != id){
             return {
@@ -12,7 +12,7 @@ class ShopsService {
                 status_code: 200,
                 message: "Akses ditolak",
                 data: {
-                    products: getProducts
+                    update_shops: null
                 }
             };
         }
