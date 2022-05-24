@@ -55,9 +55,8 @@ export default function Register() {
                     <Form.Label>Role</Form.Label>
                     <Form.Select ref={roleField}>
                         <option>Pilih Role</option>
-                        <option value="superadmin">Super Admin</option>
                         <option value="admin">Admin</option>
-                        <option value="member">Member</option>
+                        <option value="user">User</option>
                     </Form.Select>
                 </Form.Group>
                 <Form.Group className="mb-3">
