@@ -2,9 +2,13 @@ import { Button, Alert, Container, Card, Row, Col} from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { Link, Navigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { addUser } from "../slices/userSlice";
+
 
 function Home() {
 
+  const dispatch = useDispatch();
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [user, setUser] = useState({});
   const [data, setData] = useState([]);
@@ -30,6 +34,14 @@ function Home() {
 
 
         if(currentUserResponse.status) {
+          // Set user data to redux state
+          dispatch(
+            addUser({
+              user: currentUserResponse.data.user,
+              token: token,
+            })
+          );
+
           setUser(currentUserResponse.data.user);
         }
 
@@ -76,6 +88,10 @@ function Home() {
 
       <Link to="/createdata">
         <Button className="my-3" variant="success"> Create Post</Button>
+      </Link>
+
+      <Link to="/about">
+        <Button className="ms-2 my-3" variant="primary"> About </Button>
       </Link>
     
       <Row>  
