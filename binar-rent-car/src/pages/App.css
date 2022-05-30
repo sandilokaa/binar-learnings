@@ -1,0 +1,505 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.App{
+	font-family: 'helvetica', sans-serif;
+}
+
+/* Navbar */
+
+.navbar{
+	height: 100%;
+	padding: 20px;
+	background: #F1F3FF;
+}
+
+.nav-brand{
+	height: 50px;
+	width: 150px;
+	background: #0D28A6;
+}
+
+.nav-item{
+	padding: 7px 12px;
+	font-weight: 600;
+	margin-right: 15px;
+}
+
+.greetings{
+	border: 1px solid black;
+}
+
+/* End Navbar */
+
+
+/* First Content Class */
+
+.first__content{
+	background: #F1F3FF;
+	width: 100%;
+}
+
+.col__first__content h2{
+	margin-top: 27%;
+	font-size: 38px;
+	font-weight: 700;
+	line-height: 54px;
+}
+
+.col__first__content p{
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.col__image img{
+	height: 384px;
+	width: 664px;
+	margin-top: 10%;
+	margin-left: -2px;
+}
+
+.col__image{
+	margin-left: 0;
+}
+/* End First Content Class */
+
+/* Second Content Class */
+
+.second__content{
+	margin-top: 3%;
+	width: 100%;
+}
+
+.image__second__content img{
+	height: 408px;
+	width: 439px;
+	margin-top: 15%;
+	margin-left: 5%;
+}
+
+.check__second__content{
+	margin-left: -5%;
+}
+
+.check__second__content h3{
+	margin-top: 17%;
+	margin-left: 80px;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.check__second__content p{
+	font-size: 14px;
+	margin-left: 80px;
+	margin-top: 15px;
+}
+
+.check__second__content .bi-check{
+	height: 40px;
+	width: 40px;
+	padding: 1px 2px;
+	border-radius: 50%;
+	background-color: #CFD4ED;
+	font-size: 20px;
+}
+
+/* End Second Content Class */
+
+
+/* Third Content Class */
+
+.h1__wu{
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.p__wu{
+	font-size: 14px;
+}
+
+.card-body h5{
+	font-size: 16px;
+	font-weight: 700;
+	margin-top: 15px;
+}
+
+.card-body p{
+	margin-top: 15px;
+	font-size: 14px;
+}
+
+.card-body .bi-hand-thumbs-up{
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #F9CC00;
+}
+
+.card-body .bi-tag{
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #FA2C5A;
+}
+
+.card-body .bi-clock{
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #0D28A6;
+} 
+
+.card-body .bi-award{
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #73CA5C;
+}
+
+/* Third Content Class */
+
+.third__content{
+	margin-top: 6%;
+	width: 100%;
+}
+
+.h1__tc{
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.p__tc{
+	font-size: 14px;
+}
+
+.card-body h5{
+	font-size: 16px;
+	font-weight: 700;
+	margin-top: 15px;
+}
+
+.card-body p{
+	margin-top: 15px;
+	font-size: 14px;
+}
+
+.card-body .bi-hand-thumbs-up{
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #F9CC00;
+}
+
+.card-body .bi-tag{
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #FA2C5A;
+}
+
+.card-body .bi-clock{
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #0D28A6;
+} 
+
+.card-body .bi-award{
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #73CA5C;
+}
+
+/* End Third Content Class */
+
+.testimonial{
+	margin-top: 5%;
+	width: 100%;
+}
+
+.testimonial .h1__testimonial{
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 36px;
+	text-align: center;
+}
+
+.testimonial .p__testimonial{
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+}
+
+.carousel{
+	margin-top: 2%;
+}
+
+.carousel-indicators{
+	left: 0;
+	top: auto;
+	bottom: -70px;
+}
+
+.carousel-indicators .bi-chevron-left,
+.carousel-indicators .bi-chevron-right
+{
+	height: 30px;
+	width: 30px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #fff;
+	margin-left: 10px;
+	border: 1px solid #C4C4C4;
+	font-size: 15px;
+	text-align: center;
+}
+
+.carousel-indicators .active{
+	color: white;
+	background-color: #5CB85F;
+	border: none;
+	text-align: center;
+}
+
+.single-box{
+	padding: 50px 30px 40px;
+	border-radius: 8px;
+	background-color: #F1F3FF;
+	height: 240px;
+}
+
+.testimonial .img-area{
+	position: absolute;
+	margin: 0;
+	width: 20%;
+}
+
+.img-area img{
+	width: 70px;
+	height: 70px;
+	margin-top: 30px;
+}
+
+.text-img .bi-star-fill{
+	color: #F9CC00;
+}
+
+.text-img .bi-star-half{
+	color: #F9CC00;
+}
+
+.text-img p{
+	font-size: 14px;
+	line-height: 20px;
+	margin-top: 5px;
+}
+
+.text-img h2{
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+}
+
+.testimonial .text-img{
+	float: left;
+	padding-left: 30%;
+}
+
+p .price {
+	font-size: 16px;
+	font-weight: 600;
+}
+
+/* Fourth Content Class */
+
+
+
+/* End Fourth Content Class */
+
+
+/* Fifth Content Class */
+
+.rent_car{
+	margin-top: 5%;
+	width: 100%;
+}
+
+.rent_car .jumbotron{
+	text-align: center;
+	background-color: #0D28A6;
+	border-radius: 13px;
+	
+	padding: 50px 20px;
+}
+
+.jumbotron h1{
+	margin-top: 0;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 54px;
+	color: #fff;
+}
+
+.h1__sewa{
+	margin-top: 5%;
+}
+
+.jumbotron p{
+	margin-top: 20px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #fff;
+}
+
+.jumbotron .btn-success{
+	margin-top: 25px;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 700;
+}
+
+/* End Fifth Content Class */
+
+
+/* Sixth Content Class */
+
+.faq__section{
+	margin-top: 8%;
+	width: 100%;
+}
+
+.col__faq h1{
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 36px;
+}
+
+.col__faq p{
+	font-size: 14px;
+	line-height: 20px;
+}
+
+/* End Sixth Content Class */
+
+
+/* Seventh Content Class */
+
+.footer{
+	margin-top: 10%;
+	margin-bottom: 5%;	
+	width: 100%;
+}
+
+.col__address p{
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.col__nav2 a{
+	font-size: 14px;
+	line-height: 20px;
+	color: black;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.col__connect p{
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.col__connect i{
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #0D28A6;
+	color: white;
+	margin-right: 5px;
+}
+
+.col__cr p{
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.col__cr .empty{
+	height: 34px;
+	width: 100px;
+	background-color: #0D28A6;
+}
+
+/* End Seventh Content Class */
+
+/* Search Car Page */
+
+.form__section{
+	margin-top: -4%;
+	position: relative;
+	z-index: 1;
+}
+
+.ct__form{
+	padding: 30px;
+	border-radius: 15px;
+	background-color: #fff;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+	width: 80%;
+}
+
+.ct__form label{
+	font-size: 14px;
+}
+
+.ct__form input{
+	font-size: 15px;
+}
+
+.ct__form select{
+	font-size: 15px;
+}
+
+.row__button button{
+	height: 40px;
+	background-color: #5CB85F;
+	border: none;
+	font-weight: 600;
+	font-size: 14px;
+	width: 100%;
+}
+
+.cars__data{
+	margin-top: 5%;
+}
+
+.cars__data img{
+	height: 250px;
+}
+/* End Search Car Page */
+
+/* Auth */
+
+.register__card{
+	margin: 0 auto;
+	transform: translateY(10%);
+	width: 50%;
+}
+
+.login__card{
+	margin: 0 auto;
+	transform: translateY(10%);
+	width: 50%;
+}
+
+/* End Auth */
