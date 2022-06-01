@@ -13,6 +13,7 @@ export default function Update() {
 
     const titleField = useRef("");
     const descriptionField = useRef("");
+    const [pictureField, setPictureField] = useState();
 
     const [errorResponse, setErrorResponse] = useState({
         isError: false,
@@ -25,16 +26,19 @@ export default function Update() {
         try{
             const token = localStorage.getItem("token");
             
-            const userToUpdatePayload = {
-                title: titleField.current.value,
-                description: descriptionField.current.value,
-            };
+            const userToUpdatePayload = new FormData();
+
+            userToUpdatePayload.append("title", titleField.current.value);
+            userToUpdatePayload.append("description", descriptionField.current.value);
+            userToUpdatePayload.append("picture", pictureField);
+
 
             const updateRequest = await axios.put(
                 `http://localhost:2000/post/update/${id}`,
                 userToUpdatePayload, {
                     headers: {
                         Authorization: `Bearer ${token}`,
+                        "Content-Type": "multipart/form-data"
                     },
                 }
             );
@@ -90,6 +94,13 @@ export default function Update() {
                         type="text"
                         ref={descriptionField}
                         defaultValue={data.description}
+                    />
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Picture</Form.Label>
+                    <Form.Control
+                        type="file"
+                        onChange={(e) => setPictureField(e.target.files[0])}
                     />
                 </Form.Group>
 

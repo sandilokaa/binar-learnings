@@ -10,7 +10,6 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import CreateData from "./pages/CreateData";
 import UpdateData from "./pages/UpdateData";
-import DeleteData from "./pages/DeleteData";
 import About from "./pages/About";
 
 
@@ -24,7 +23,6 @@ render(
         <Route path="/login" element={<Login />}></Route>
         <Route path="/createdata" element={<CreateData />}></Route>
         <Route path="/update/:id" element={<UpdateData />}></Route>
-        <Route path="/delete/:id" element={<DeleteData />}></Route>
         <Route path="/about" element={<About />}></Route>
       </Routes>
     </Router>

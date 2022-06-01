@@ -9,6 +9,7 @@ export default function Create() {
 
     const titleField = useRef("");
     const descriptionField = useRef("");
+    const [pictureField, setPictureField] = useState();
 
     const [errorResponse, setErrorResponse] = useState({
         isError: false,
@@ -21,16 +22,18 @@ export default function Create() {
         try{
             const token = localStorage.getItem("token");
             
-            const userToCreatePayload = {
-                title: titleField.current.value,
-                description: descriptionField.current.value,
-            };
+            const userToCreatePayload = new FormData();
+
+            userToCreatePayload.append("title", titleField.current.value);
+            userToCreatePayload.append("description", descriptionField.current.value);
+            userToCreatePayload.append("picture", pictureField);
 
             const createRequest = await axios.post(
                 "http://localhost:2000/post/create",
                 userToCreatePayload,{
                     headers:{
                         Authorization: `Bearer ${token}`,
+                        "Content-Type": "multipart/form-data",
                     },
                 }
             );
@@ -69,6 +72,14 @@ export default function Create() {
                         type="text"
                         ref={descriptionField}
                         placeholder="Masukkan Description"
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3">
+                    <Form.Label>Picture</Form.Label>
+                    <Form.Control
+                        type="file"
+                        onChange={(e) => setPictureField(e.target.files[0])}
                     />
                 </Form.Group>
 

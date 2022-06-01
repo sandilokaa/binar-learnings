@@ -1,4 +1,4 @@
-import { Button, Alert, Container, Card, Row, Col} from "react-bootstrap";
+import { Button, Alert, Container, Card, Row, Col, Modal} from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { Link, Navigate } from 'react-router-dom';
@@ -12,6 +12,26 @@ function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [user, setUser] = useState({});
   const [data, setData] = useState([]);
+  const [isRefresh, setIsRefresh] = useState(false);
+
+
+  // Modal 
+  
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  // Response 
+  const [successResponse, setSuccessResponse] = useState({
+    isSuccess: false,
+    message: "",
+  });
+
+  const [errorResponse, setErrorResponse] = useState({
+    isError: false,
+    message: "",
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,7 +72,8 @@ function Home() {
 
     fetchData();
     posts();
-  }, []);
+    setIsRefresh(false);
+  }, [isRefresh]);
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -74,6 +95,41 @@ function Home() {
       console.log(err);
     }
   }
+
+  const onDelete = async (e, data) => {
+    e.preventDefault();
+    try {
+      const token = localStorage.getItem("token");
+      
+      const deletedPost = await axios.delete(
+        `http://localhost:2000/post/delete/${data.id}`,
+        {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        }
+      );
+      
+      const successResponse = deletedPost.data.message;
+
+      setSuccessResponse({
+        isSuccess: true,
+        message: successResponse,
+      })
+
+      setIsRefresh(true);
+      setShow(true);
+
+    } catch (err) {
+      console.log(err);
+      const response = err.response.data;
+
+      setErrorResponse({
+        isError: true,
+        message: response.message,
+      });
+    }
+  }
   
 
   return isLoggedIn ? (
@@ -85,6 +141,14 @@ function Home() {
       </Button>
 
       <Alert> Selamat Datang {user.name}</Alert>
+      
+      {successResponse.isSuccess && (
+        <Alert variant="success" onClose={() => setSuccessResponse(true)} dismissible>{successResponse.message}</Alert>
+      )}
+
+      {errorResponse.isError && (
+        <Alert variant="danger" onClose={() => setErrorResponse(true)} dismissible>{errorResponse.message}</Alert>
+      )}
 
       <Link to="/createdata">
         <Button className="my-3" variant="success"> Create Post</Button>
@@ -99,21 +163,39 @@ function Home() {
           <Col lg={4} key={data.id}>
             <Card className="mt-3">
               <Card.Body>
-                <Card.Title>{data.title}</Card.Title>
+              <Card.Img variant="top" src={`http://localhost:2000/public/files/${data.picture}`} height="240"/>
+                <Card.Title className="mt-3">{data.title}</Card.Title>
                 <Card.Text>
                   {data.description}
                 </Card.Text>
                 <Link to={`/update/${data.id}`}>
                   <Button variant="primary">Edit Data</Button>
                 </Link>
-                <Link to={`/delete/${data.id}`}>
-                  <Button className="ms-3" variant="danger">Delete Data</Button>
-                </Link>
+                  <Button className="ms-3" variant="danger" onClick={handleShow}>Delete Data</Button>
               </Card.Body>
             </Card>
           </Col>
         ))}
       </Row>
+
+      {/* Modal */}
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Delete Post</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Yakin ga nih?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Link to={`/delete/${data.id}`} onClick={(e) => onDelete(e, data)} >
+            <Button variant="danger">
+              Delete
+            </Button>
+          </Link>
+        </Modal.Footer>
+      </Modal>
 
     </Container>
     </div>
