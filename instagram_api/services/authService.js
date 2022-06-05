@@ -1,17 +1,21 @@
 const usersRepository = require("../repositories/usersRepository");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const UsersRepository = require("../repositories/usersRepository");
+const { JWT } = require("../lib/conts");
+const { OAuth2Client } = require("google-auth-library");
 
 const SALT_ROUND = 10;
-const JWT_SECRET = "jwt_secret";
-const JWT_EXPIRED = "24h";
 
-class AuthService{
+class AuthService {
 
-    static async register({name, email, password}){
+    static async register({
+        name,
+        email,
+        password,
+        role
+    }) {
         // Payload Validation
-        if(!name){
+        if (!name) {
             return {
                 status: false,
                 status_code: 400,
@@ -22,7 +26,18 @@ class AuthService{
             };
         }
 
-        if(!email){
+        if (!role) {
+            return {
+                status: false,
+                status_code: 400,
+                message: "Role wajib diisi",
+                data: {
+                    registered_user: null,
+                },
+            };
+        }
+
+        if (!email) {
             return {
                 status: false,
                 status_code: 400,
@@ -33,7 +48,7 @@ class AuthService{
             };
         }
 
-        if(!password){
+        if (!password) {
             return {
                 status: false,
                 status_code: 400,
@@ -42,7 +57,7 @@ class AuthService{
                     registered_user: null,
                 },
             };
-        }else if (password.length < 8){
+        } else if (password.length < 8) {
             return {
                 status: false,
                 status_code: 400,
@@ -53,9 +68,11 @@ class AuthService{
             };
         }
 
-        const getUserByEmail = await usersRepository.getByEmail({email});
+        const getUserByEmail = await usersRepository.getByEmail({
+            email
+        });
 
-        if(getUserByEmail){
+        if (getUserByEmail) {
             return {
                 status: false,
                 status_code: 400,
@@ -64,12 +81,13 @@ class AuthService{
                     registered_user: null,
                 },
             };
-        }else {
+        } else {
             const hashedPassword = await bcrypt.hash(password, SALT_ROUND);
-            const createdUser = await UsersRepository.create({
+            const createdUser = await usersRepository.create({
                 name,
                 email,
                 password: hashedPassword,
+                role,
             });
 
             return {
@@ -83,10 +101,12 @@ class AuthService{
         }
     }
 
-    static async login({email, password}) {
+    static async login({
+        email,
+        password
+    }) {
         // Payload Validation
-
-        if(!email){
+        if (!email) {
             return {
                 status: false,
                 status_code: 400,
@@ -97,7 +117,7 @@ class AuthService{
             };
         }
 
-        if(!password){
+        if (!password) {
             return {
                 status: false,
                 status_code: 400,
@@ -106,7 +126,7 @@ class AuthService{
                     registered_user: null,
                 },
             };
-        }else if (password.length < 8){
+        } else if (password.length < 8) {
             return {
                 status: false,
                 status_code: 400,
@@ -117,9 +137,11 @@ class AuthService{
             };
         }
 
-        const getUser = await usersRepository.getByEmail({email});
+        const getUser = await usersRepository.getByEmail({
+            email
+        });
 
-        if(!getUser) {
+        if (!getUser) {
             return {
                 status: false,
                 status_code: 404,
@@ -128,18 +150,16 @@ class AuthService{
                     user: null,
                 },
             };
-        }else {
+        } else {
             const isPasswordMatch = await bcrypt.compare(password, getUser.password);
 
-            if(isPasswordMatch){
-                const token = jwt.sign(
-                    {
+            if (isPasswordMatch) {
+                const token = jwt.sign({
                         id: getUser.id,
                         email: getUser.email,
                     },
-                    JWT_SECRET, 
-                    {
-                        expiresIn: JWT_EXPIRED,
+                    JWT.SECRET, {
+                        expiresIn: JWT.EXPIRED,
                     }
                 );
 
@@ -151,7 +171,7 @@ class AuthService{
                         token,
                     },
                 };
-            }else {
+            } else {
                 return {
                     status: false,
                     status_code: 400,
@@ -161,6 +181,65 @@ class AuthService{
                     },
                 };
             }
+        }
+    }
+
+    static async loginGoogle({google_credential: googleCredential}) {
+        try {
+
+            // Get Google user credential
+            const client = new OAuth2Client(
+                "878652378412-rmjjckepnmtfqmn6b099tf95vsvmhuoh.apps.googleusercontent.com"
+            );
+
+            const userInfo = await client.verifyIdToken({
+                idToken: googleCredential,
+                audience:
+                    "878652378412-rmjjckepnmtfqmn6b099tf95vsvmhuoh.apps.googleusercontent.com",
+            });
+
+            const { email, name } = userInfo.payload;
+
+            const getUserByEmail = await usersRepository.getByEmail({ email });
+
+            if(!getUserByEmail) {
+                await usersRepository.create({
+                    name, 
+                    email,
+                    role: "user"
+                });
+            }
+
+            const token = jwt.sign(
+                {
+                    id: getUserByEmail.id,
+                    email: getUserByEmail.email,
+                },
+                JWT.SECRET,
+                {
+                    expiresIn: JWT.EXPIRED,
+                }
+            );
+
+            return {
+                status: true,
+                status_code: 200,
+                message: "User berhasil login",
+                data: {
+                    token,
+                },
+            };
+        } catch (err) {
+            console.log(err);
+
+            return {
+                status: false,
+                status_code: 500,
+                message: err.message,
+                data: {
+                    registered_user: null,
+                },                
+            };
         }
     }
 }
